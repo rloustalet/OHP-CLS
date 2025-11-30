@@ -1,0 +1,97 @@
+Rapport Atelier Astrophysique Observationnelle 2 HAP905P
+========================================================
+
+:date: 01/10/2024
+:auteurs: Julien Morin <julien.morin@umontpellier.fr>
+          Bertrand Plez <bertrand.plez@umontpellier.fr>
+
+
+Modèle LaTeX et compilation
+---------------------------
+* Vous n'avez pas besoin de modifier le contenu du dossier 'sty', seulement celui du répertoire racine et du sous-répertoire 'fig'.
+
+* Renommez le fichier principal aaaa-projet_OHP_M2AstroCCP_Nom1_Nom2_Nom3.tex en remplaçant aaaa par
+l'année, modifiez CCP en AS au besoin, et indiquez vos noms (Nom1, Nom2, Nom3), de même pour le fichier .bib
+correspondant. Vous pouvez ensuite mettre à jour ce nom de fichier dans le Makefile sur la ligne qui
+commence par "FILE=" si vous souhaitez utiliser la commande make, ainsi que dans la commande
+"\bibliography" située ligne 60 du fichier principal. Cela générera un fichier aaaa-projet_OHP_M2CCP_Nom1_Nom2_Nom3.pdf
+(avec les substitutions), merci d'utiliser cette nomenclature pour faciliter notre classement.
+
+* Dans le fichier principal, choisir entre les options "\masterccptrue" et "\masterastrue", ou les deux en fonction des parcours suivis.
+
+* Lisez les commentaires dans chaque fichier tex qui vous guident pour la rédaction.
+
+* Le rapport est initialement rempli avec un exemple de texte pour illustrer la longueur maximale attendue : commenter ou supprimer les commandes '\lipsum' pour le retirer.
+
+* Pour modifier l'image de couverture remplacez le fichier 'fig/cover.jpg'.
+
+* Le rapport se compile avec PDFLaTeX sous TexMaker, Overleaf (www.overleaf.com) ou bien en ligne de commande avec 'make all' (il faut adapter la ligne "FILE=" dans le Makefile).
+
+Consignes pour la rédaction
+---------------------------
+* Langue de rédaction : anglais
+  * le résumé (dernière page) doit être rédigé en anglais et en français.
+
+* Longueur du rapport : 
+  * 10 pages max pour le corps de texte
+  * 1 page max pour la bibliographie et les références en ligne
+  * 3 pages max d'annexes (figures et tables supplémentaires, détail de calculs...)
+  * 1 page max pour les résumés et le détail des contributions
+  --> avec la couverture (1 page), le sommaire (1 page) et les sauts de page du modèle le PDF final est composé de *17 pages maximum*.
+
+* Le fichier PDF résultant ne doit pas excéder 10 Mo.
+
+* Ne pas modifier la taille de la police ou les marges.
+  
+Critères et barème de notation
+------------------------------
+Le rapport et les notebooks sont notés sur 14 :
+
+* Niveau de rédaction d'un rapport scientifique [3 points]
+  * texte synthétique tout en étant clair, précis et complet au vu du sujet traité
+  * présentation des concepts et des calculs correspondant à un niveau M2
+  * respect des règles de citation des références bibliographiques (voir recommandations plus bas)
+  * les figures, tables et annexes sont toutes citées à bon escient dans le texte
+
+* Structure et contenu du rapport [6 points]
+  * toutes les étapes du projet ont été réalisées et décrites dans le rapport
+    * contexte astrophysique, observations, calibration des données, modélisation, discussion
+  * les incertitudes de mesure sont évaluées et discutées
+  * les résultats obtenus sont comparés aux études existantes et discutés
+  * les figures présentent clairement les résultats obtenus avec titres et légendes précis
+    * les figures et tables clés du rapport ne doivent pas se retrouver en annexe
+  * bonne exploitation, voire modification à bon escient, de la structure proposée
+    * le résumé/abstract et la description de la contribution de chaque auteur sont présents
+
+* Forme du rapport [2 points]
+  * orthographe, syntaxe, vocabulaire
+  * respect des consignes de rédaction (nom de fichier, nombre de pages...)
+
+* Notebooks jupyter python [3 points]
+  * le code est correctement structuré, divisé en plusieurs notebooks numérotés suivant l'ordre du rapport
+  * les notebooks sont fournis déjà exécutés (résultat directement visible)
+  * le code est rédigé clairement, avec des commentaires pertinents
+  * le code est fonctionnel et permet de reproduire toutes les figures et mesures quantitatives du rapport
+
+Recommandations
+---------------
+* Un rapport scientifique est attendu, ce ne doit pas être un récit linéaire de vos nuits d'observations à l'OHP, ni un tutoriel de traitements de données sous astropy et encore moins une notice touristique sur l'histoire de l'OHP :
+  * inspirez vous du style des articles scientifiques et thèses disponibles en ligne ;
+  * rédigez l'ensemble rapport et notebooks en ayant pour objectif qu'un autre étudiant de M2 puisse comprendre votre projet et ait les informations nécessaires pour reproduire votre étude.
+
+* Le rapport doit être auto-suffisant, il reprendra nécessairement certains points discutés lors de la présentation intermédiaire d'octobre.
+
+* Le rapport doit mettre en valeur le sens critique et le recul dont vous savez faire preuve : précisez et critiquez les hypothèses qui sont faites, commentez les résultats obtenus, comparez avec la littérature, basez vous (si possible) sur des raisonnements quantitatifs.
+
+* Il faut exploiter au mieux les données et modèles disponibles, de nombreuses limitations peuvent exister (liées à l'instrumentation, aux conditions météo, à la modélisation réalisable sur la durée d'un tel projet...), elles ne doivent pas vous empêcher de mener une étude scientifique de qualité.
+
+* La citation des références bibliographiques est importante :
+  * pour créditer les auteurs d'une étude et ne pas donner l'impression de plagier
+  * pour illustrer le contexte, appuyer vos hypothèses, discuter vos résultats...
+  * toutes les références doivent être citées dans le texte de manière pertinente
+  * toutes les figures que vous n'avez pas produites vous-mêmes doivent être clairement référencées
+  * il est important de citer correctement des références fournies par les enseignants et d'en trouver d'autres
+  * les livres de niveau master/recherche et les articles publiés dans les revues à comité de lecture sont à privilégier et à rechercher via NASA ADS, arXiv, google Scholar
+  * utiliser le service ADS de la NASA https://ui.adsabs.harvard.edu/ pour exporter les citations en bibtex
+  * conserver le format de citation sous la forme "Chandrasekhar (1961)" et pas "[1]".
+

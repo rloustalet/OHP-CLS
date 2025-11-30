@@ -1,0 +1,119 @@
+\section{Modeling}
+
+\subsection{Model description}
+% describe the model and its assumptions/approximations
+% discuss how observable quantities are connected to physical parameters
+% establish a clear distinction between what is measurable and what is assumed
+
+This research employs self-consistent stellar evolution models encompassing a broad spectrum of masses, ages, and chemical compositions of the Padova isochrones. An isochrone is a theoretical point in space where stars of different masses but the same initial composition are located at a certain age and metallicity. This means that each point on the curve shows the mass of a different star and some of its associated physical properties, like its brightness or effective temperature.
+These isochrones also provide theoretical magnitudes in the photometric system used. Thanks to this correspondence, it is then possible to directly compare our data with that of the isochrones, which will give us an estimate of the age and distance of M52.
+
+\subsection{Application to observations}
+% derive physical parameters and their uncertainties
+% discuss sources of uncertainties
+
+The determination of the cluster's physical parameters relies on the mapping of the theoretical luminosity-temperature plane to the observational color-magnitude plane. The transformation relating the theoretical absolute magnitude ($M_{\lambda}$) to the observed apparent magnitude ($m_{\lambda}$) in a given passband $\lambda$ is governed by the distance modulus ($\mu$) and the interstellar extinction ($A_{\lambda}$):
+\begin{equation}
+    m_{\lambda} = M_{\lambda}(\tau, Z) + \mu + A_{\lambda}
+\end{equation}
+where $\tau$ represents the age of the stellar population and $Z$ its metallicity. The distance modulus is directly related to the heliocentric distance $d$ (in parsecs) by $\mu = 5 \log_{10}(d) - 5$. The extinction term is constrained by the color excess $E(B-V)$ via the specific extinction coefficient $R_{\lambda}$ of the photometric system, such that $A_{\lambda} = R_{\lambda} \times E(B-V)$.
+
+The derivation of parameters follows a hierarchical constraints approach based on the morphology of the Color-Magnitude Diagram (CMD):
+\begin{itemize}
+    \item The \textbf{Age ($\tau$)} is primarily constrained by the luminosity and color of the Main Sequence Turn-Off (MSTO), marking the exhaustion of core hydrogen in the most massive stars still on the main sequence.
+    \item The \textbf{Distance ($d$)} determines the vertical shift required to align the theoretical Zero-Age Main Sequence (ZAMS) with the observed stellar locus.
+    \item The \textbf{Reddening ($E(B-V)$)} induces a shift along the reddening vector (both horizontal and vertical), impacting the color index $(g-r)$.
+\end{itemize}
+
+The resulting $(g-r)$ vs. $g$ Color-Magnitude Diagram (CMD) of the target field is presented in \ref{fig:HR}, overlaid with three theoretical PARSEC isochrones corresponding to ages of 100 Myr, 1 Gyr, and 10 Gyr. The morphological analysis of the Main Sequence Turn-Off (MSTO) allows for an unambiguous age discrimination: the older models ($\tau \geq 1$ Gyr) predict a turn-off significantly fainter ($g > 13.5$) and redder than the observed population of bright stars. Conversely, the 100 Myr isochrone ($\log t = 8.0$) accurately reproduces the luminosity of the brightest main-sequence stars ($g \approx 11.5$) and the position of the "blue loop" characteristic of massive evolved stars.
+
+The physical parameters of the cluster were derived by fitting this 100 Myr model to the observed stellar locus. The alignment of the theoretical Zero-Age Main Sequence (ZAMS) with the data required a vertical shift corresponding to a distance modulus of $\mu = 11.3$. Furthermore, a significant horizontal shift was necessary to match the observed colors. We measured a color excess in the Pan-STARRS bands of $E(g-r) \approx 0.7$ mag. Assuming the standard extinction law from Schlafly \& Finkbeiner \cite{schlafly2011extinction}, where the total-to-selective extinction coefficients are $R_g = 3.172$ and $R_r = 2.271$, this color shift relates to the standard reddening parameter via the differential extinction relation:
+\begin{equation}
+    E(g-r) = A_g - A_r = (R_g - R_r) \times E(B-V)
+\end{equation}
+Solving this relation yields a reddening value of $E(B-V) \approx 0.70$. This substantial extinction is consistent with a line of sight passing through the Galactic plane.
+
+Despite the robust fit of the isochrone ridge line, the Main Sequence exhibits a residual broadening of $\delta(g-r) \sim 0.15$ mag. This scatter is attributed to a combination of photometric errors at the faint end ($g > 16$), the presence of unresolved binary systems which create a sequence parallel to and brighter than the single-star sequence, and potentially differential reddening across the field of view. Based on these constraints, we classify the target as a young open cluster located at a distance of $d \approx 1.8$ kpc ($\mu=11.3$).
+
+The precision of these estimates is limited by several distinct sources of uncertainty. 
+statistically, \textit{photometric errors} (photon noise and background fluctuations) broaden the Main Sequence, complicating the precise location of the MSTO. 
+Systematically, \textit{calibration uncertainties}, specifically in the determination of the zero-points relative to the reference catalog, can introduce global biases in distance and age. 
+Finally, a significant \textit{parameter degeneracy} exists between distance and reddening, as an increase in either parameter results in fainter apparent magnitudes. This degeneracy is partially broken by the color-dependence of the extinction vector but remains the dominant source of systematic error in isochrone fitting without external priors (such as spectroscopic metallicity or astrometric parallax).
+
+The resulting $(g-r)$ vs. $g$ Color-Magnitude Diagram (CMD) of the target field is presented in Figure \ref{fig:HR}, overlaid with three theoretical PARSEC isochrones \cite{bressan2012parsec} corresponding to ages of 100 Myr ($\log t = 8.0$), 1 Gyr ($\log t = 9.0$), and 10 Gyr ($\log t = 10.0$). The observational data reveals a well-defined Main Sequence (MS) extending from $g \approx 11.5$ down to the detection limit at $g \approx 16$, despite the presence of field contamination and photometric scatter at fainter magnitudes. The isochrone fitting process, performed using the distance modulus and extinction coefficients derived in the previous section, allows for a robust discrimination between the different evolutionary scenarios.
+
+The Color-Magnitude Diagram (CMD) presented in Figure \ref{fig:HR}  displays the observational data overlaid with three theoretical PARSEC isochrones ($\tau = 100$ Myr, 1 Gyr, and 10 Gyr). The optimal physical parameters were determined through an iterative fitting procedure, adjusting the color excess $E(B-V)$ and the distance modulus $\mu$ to minimize the offset between the theoretical Zero-Age Main Sequence (ZAMS) and the ridge line of the observed stellar locus.
+
+A comparative morphological analysis demonstrates a fundamental incompatibility of the intermediate and old stellar population models with the data, regardless of the extinction applied. The 1 Gyr (green curve) and 10 Gyr (orange curve) models predict a Main Sequence Turn-Off (MSTO) at magnitudes significantly fainter ($g > 13.5$ and $g > 14.5$, respectively) than the brightest unevolved stars observed. Furthermore, these models fail to reproduce the bluest spectral types present in the cluster ($(g-r) \approx 0.4$), characteristic of massive stars with short lifetimes. Consequently, ages of $\geq 1$ Gyr are ruled out with high confidence.
+
+In contrast, the 100 Myr isochrone (red curve) exhibits a high degree of consistency with the observations. By shifting this model to match the observed colors, we derived a best-fit reddening value of $E(B-V) \approx 0.7$ (assuming $R_g=3.172$ and $R_r=2.271$), combined with a distance modulus of $\mu = 11.3$. With these specific parameters, the model accurately traces the ZAMS for magnitudes $g > 12.5$ and correctly predicts the MSTO location at $g \approx 11.5$. The "blue loop" feature in the model spatially coincides with the brightest evolved stars in the sample, confirming the classification of the target as a young open cluster.
+
+It is important to note the residual broadening of the Main Sequence, which exceeds the theoretical thickness of a single stellar population. This scatter, estimated at $\delta(g-r) \sim 0.15$ mag, is primarily driven by photometric uncertainties at the faint end. However, for brighter magnitudes ($g < 14$), the scatter is likely dominated by the presence of unresolved binary systems, which create a secondary sequence parallel to and above the MS, and potentially by differential reddening across the field of view. Based on the coincidence of the MSTO and the ZAMS fit, we constrain the age of the cluster to $\tau \sim 100$ Myr, classifying it as a young open cluster.
+
+The Color-Magnitude Diagram derived from the CRAL observations Figure \ref{fig:HR}b exhibits a structural morphology that is strictly congruent with the OHP dataset. The Main Sequence follows an identical locus, and the Turn-Off point is resolved at the same apparent magnitude ($g \approx 11.5$) and color index. 
+
+Notably, the physical parameters independently derived from the OHP analysis ($\tau = 100$ Myr, $\mu = 11.3$, $E(B-V) = 0.7$) provide an equally satisfactory fit to the CRAL data without requiring readjustment. The 100 Myr isochrone (red curve) effectively reproduces the distribution of the brightest cluster members. This reproducibility for two independent observing runs and instrumental setups strongly validates at least a certains robustness of our photometric calibration and the resulting age and distance estimates.
+
+\begin{figure}[h!]
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{rapport_projet_OHP/fig/cluster analysis ohp.png}
+        \caption{HR diagram for the data acquired at OHP}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{rapport_projet_OHP/fig/cluster analysis lyon.png}
+        \caption{HR diagram for the data acquired at CRAL}
+    \end{subfigure}
+    \caption{HR diagram for data acquired at OHP and CRAL}
+    \label{fig:HR}
+\end{figure}
+
+\subsection{Bayesian modelling and MCMC exploration of parameter degeneracies}
+
+In addition to the manual isochrone fitting, we performed a series of tests using a
+Markov Chain Monte Carlo (MCMC) sampler in order to explore the degeneracies between
+age, distance modulus and reddening. The MCMC analysis was applied primarily to the
+OHP dataset. The CRAL photometry shows the same issues, with slightly better
+convergence but without providing clearer solutions, so the discussion remains
+unchanged.
+Several configurations were tested in the Jupyter notebook \texttt{MCMC\_data\_ajustement(\_ohp)}.ipynb \footnote{Both data set can be used on the same jupyter notebook, we just split the notebook to make easier to compare result}. In a first, naïve approach we treated the three
+extinction coefficients $(A_g, A_r, A_i)$ as independent free parameters. As expected,
+this led to a fully degenerate model: As presented in the Figure \ref{fig:mcmc_first_attempt} (where we used lyon's data set), the chains did not converge toward any
+well-defined solution and simply wandered through a broad region of parameter space.
+Adding extra colour–magnitude diagrams such as $(r'-i',\,r')$ and $(g'-i',\,g')$ did
+not improve the situation.
+On the contrary, the $i'$ band — which is known to be more sensitive to differences
+between instrumental and theoretical passbands — tended to bias the sampler toward
+very young and heavily reddened solutions. In other words, it “lifted” some
+degeneracies but also introduced new ones, and the resulting solutions were clearly
+inconsistent with the observed turn-off morphology.
+
+We then simplified the extinction model by replacing $(A_g, A_r, A_i)$ with a single
+parameter $E(B-V)$, using fixed extinction coefficients from the Pan-STARRS system.
+This reduces the dimensionality of the problem and removes one of the main formal
+degeneracies. However, even in this simplified framework the MCMC does not converge
+toward a single, well-defined posterior. The chains show a persistent tendency to
+favour relatively young solutions, reflecting the intrinsic age–reddening–distance
+degeneracy and the fact that the likelihood is dominated by the numerous faint stars
+on the lower main sequence, which are almost insensitive to age. Small systematic
+offsets in colour calibration and in the adopted extinction law can then be absorbed
+by choosing a younger and more reddened isochrone, even though the resulting turn-off
+is not fully satisfactory when inspected by eye.
+
+Although no clear and uniquely physical solution emerges from the MCMC, the sampled
+parameter space does exhibit a preferred region roughly consistent with the manual
+fit. As show in the Figure \ref{fig:mcmc_final_attempt} A significant fraction of the walkers visit solutions with
+$\log_{10}(\mathrm{age/yr}) \simeq 7.8$ / $7.9$, distance modulus
+$\mu \simeq 10.5$ / $11.2$, and reddening $E(B-V) \simeq 0.4$ / $0.7$, which remain broadly
+compatible with our adopted values. We therefore have no way to interpret the MCMC
+analysis as an independent measurement of the cluster parameters.
+Because of limited time and the quality of the available photometry, we did not
+attempt a full optimisation of the Bayesian framework. Several improvements could be
+implemented in future work: reweighting the likelihood so that bright stars near the
+main-sequence turn-off carry more weight than faint stars, adopting more informative
+astrophysical priors on age, distance and reddening, and refining the photometric
+calibration (including colour terms and instrument-specific extinction coefficients).
+Such refinements would likely produce a more stable and astrophysically meaningful
+posterior, but lie beyond the scope of this project and our current skills.

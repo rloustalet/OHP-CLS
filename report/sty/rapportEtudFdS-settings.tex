@@ -1,0 +1,157 @@
+%%%%%%%
+% rapportEtudFdS-settings.tex
+% 
+% Style LaTeX pour les rapports des étudiants de la FdS Montpellier
+% conçu pour PDFLaTeX
+% -- réglages des styles
+% 
+% Auteur : Julien Morin <julien.morin@umontpellier.fr>
+% Date   : 04/09/2019 
+%
+% Historique :
+%  04 Jan 2017: Création à partir de PolyFds
+%  21 Mar 2017: Ajout environnment contribution
+%  04 Sep 2019 : Ajout environnment remerciements
+%%%%%%%
+
+%%%%%%%%%%%%%%%%% Réglages pour la fonte lmodern %%%%%%%%%%%%%%
+\DeclareFontFamily{OMX}{lmex}{}
+\DeclareFontShape{OMX}{lmex}{m}{n}{%
+  <->lmex10%
+}{}
+
+%%%%%%%%%%% Personnalisation des longueurs et compteurs %%%%%%%%%%%
+\setlength{\parskip}{2pt plus 1pt}
+\setlength{\itemsep}{0pt minus 12pt}
+\setlength{\partopsep}{0pt minus 12pt}
+
+%%%%%%%%%%% Personnalisation des longueurs et compteurs %%%%%%%%%%%
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{3}
+\setlist[itemize]{topsep=2pt plus 2pt minus 2pt, 
+		  partopsep=2pt plus 2pt minus 2pt,
+		  parsep=2pt plus 2pt minus 2pt,
+		  itemsep=2pt plus 2pt minus 2pt}
+
+%%%%%%%%%%% Personnalisation des listes %%%%%%%%%%%
+\renewcommand{\labelitemi}{\small$\bullet$}
+\renewcommand{\labelitemii}{\small$\circ$}
+\renewcommand{\labelitemiii}{{\small$\square$}}
+\renewcommand{\labelitemiv}{{\tiny$\circ$}}
+
+%%%%%%%%%%% Definition environnement formule et texte encadrés %%%%%%%%%%%
+\newcommand{\formule}[1]{%
+  \setlength{\fboxsep}{1.0em}
+  \setlength{\fboxrule}{0.2pt}
+  \framebox[1.5\width]{\mbox{$#1$}}
+}
+
+\newcommand{\rformule}[1]{%
+  \setlength{\fboxsep}{1.0em}
+  \setlength{\fboxrule}{1.2pt}
+  \colorlet{currentcolor}{.}%
+  \red{%
+    \framebox[1.5\width]{\mbox{{\color{currentcolor}$#1$}}}}
+  \color{currentcolor}
+}
+
+\newcommand{\mathsoul}[1]{%
+  \renewcommand{\ULthickness}{0.2pt}
+  \hbox{\uline{$#1$}}
+}
+
+\newcommand{\rmathsoul}[1]{%
+  \renewcommand{\ULthickness}{1.2pt}
+  \colorlet{currentcolor}{.}%
+  \red{%
+    \hbox{\uline{\color{currentcolor}$#1$}}
+  }
+  \color{currentcolor}
+}
+
+\newcommand{\encadre}[1]{%
+  \setlength{\fboxsep}{1.0em}
+  \setlength{\fboxrule}{0.2pt}
+  \framebox[1.1\width]{%
+  \begin{minipage}{0.8\textwidth}
+    #1
+  \end{minipage}}
+}
+
+\newcommand{\rencadre}[1]{%
+  \setlength{\fboxsep}{1.0em}
+  \setlength{\fboxrule}{1.2pt}
+  \colorlet{currentcolor}{.}%
+  \red{%
+    \framebox[1.1\width]{%
+  \begin{minipage}{0.8\textwidth}
+    {\color{currentcolor}#1}
+  \end{minipage}}}
+  \color{currentcolor}
+}
+
+\newcommand{\soul}[1]{%
+  \renewcommand{\ULthickness}{0.2pt}
+  \hbox{\uline{#1}}
+}
+
+\newcommand{\rsoul}[1]{%
+  \renewcommand{\ULthickness}{1.2pt}
+  \colorlet{currentcolor}{.}%
+  \red{%
+    \hbox{\uline{\color{currentcolor}#1}}
+  }
+  \color{currentcolor}
+}
+
+%%%%%%%%%%%%%% Environnments pour résumé en/fr + contributions et remerciements %%%%%%%%%%%%%%
+\newenvironment{contribution}{%
+  \small
+  \iflanguage{french}{%
+  \begin{center}%
+    {\large\bfseries Contributions des auteurs \vspace{-.5em}\vspace{\z@}}%
+  \end{center}%
+  \quotation
+  }{}
+  \iflanguage{english}{%
+  \begin{center}%
+    {\large\bfseries Authors contributions \vspace{-.5em}\vspace{\z@}}%
+  \end{center}%
+  \quotation
+   }{}
+}
+
+\newenvironment{resumefr}{%
+  \small
+  \begin{center}%
+    {\large\bfseries Résumé\vspace{-.5em}\vspace{\z@}}%
+  \end{center}%
+  \quotation
+}
+
+\newenvironment{resumeen}{%
+  \small
+  \begin{center}%
+    {\large\bfseries Abstract\vspace{-.5em}\vspace{\z@}}%
+  \end{center}%
+  \quotation
+}
+
+\newenvironment{remerciements}{%
+  \small
+  \iflanguage{french}{%
+  \begin{center}%
+    {\large\bfseries Remerciements\vspace{-.5em}\vspace{\z@}}%
+  \end{center}%
+  \quotation
+  }{}
+  \iflanguage{english}{%
+  \begin{center}%
+    {\large\bfseries Acknowledgements\vspace{-.5em}\vspace{\z@}}%
+  \end{center}%
+  \quotation
+  }{}  
+}
+
+%%%%%%%%%%%%%%%%%% Redefinitions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\emph}{\textbf}

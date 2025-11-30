@@ -1,0 +1,80 @@
+%%% astro units and symbols
+\def\rpd{\hbox{rad\,d$^{-1}$}}
+\def\mrpd{\hbox{mrad\,d$^{-1}$}}
+\def\chisq{\hbox{$\chi^2$}}
+\def\chisqr{\hbox{$\chi^2_r$}}
+\def\msun{\hbox{${\rm M}_{\odot}$}}
+\def\rsun{\hbox{${\rm R}_{\odot}$}}
+\def\mstar{\hbox{$M_{\star}$}}
+\def\rstar{\hbox{$R_{\star}$}}
+\def\lstar{\hbox{$L_{\star}$}}
+\def\lsun{\hbox{${\rm L}_{\odot}$}}
+\def\teff{\hbox{$T_{\rm eff}$}}
+\def\teffsun{\hbox{$T_{\rm eff,\odot}$}}
+\def\sn{\hbox{S/N}}
+\def\vrad{\hbox{$v_{\rm rad}$}}
+\def\RV{\hbox{${\rm RV}$}}
+\def\ms{\hbox{m\,s$^{-1}$}}
+\def\kms{\hbox{km\,s$^{-1}$}}
+\def\eps{\hbox{erg\,s$^{-1}$}}
+\def\vsini{\hbox{$v\sin i$}}
+\def\rsini{\hbox{$R\sin i$}}
+\def\ptt{\hbox{$10^{-4} I_{\rm c}$}}
+\def\degr{\hbox{$^\circ$}}
+\def\Prot{\hbox{$P_{\rm rot}$}}
+\def\Pzdi{\hbox{$P_{\rm ZDI}$}}
+\def\mj{\hbox{$\rm M_J$}}
+\def\d{\hbox{$\rm d$}}
+\def\kG{\hbox{$\rm kG$}}
+\def\Omeq{\hbox{$\Omega_{\rm eq}$}}
+\def\dOm{\hbox{$d\Omega$}}
+\def\dOmsun{\hbox{$d\Omega_{\odot}$}}
+\def\IUR{\hbox{$I_{\rm UR}$}}
+\def\Iq{\hbox{$I_{\rm q}$}}
+\def\VUR{\hbox{$V_{\rm UR}$}}
+\def\Caii{\hbox{Ca$\;${\sc ii}}}
+\def\um{\hbox{$\mu$m}}
+
+%%% other physics symbols
+\def\NA{\hbox{${\cal N}_{A}$}}
+
+%%% math symbols
+\newcommand{\od}[1]{\hbox{${\cal O}(#1)$}}
+% \renewcommand*{\vec}[1]{\mbox{$\mathbf{\displaystyle#1}$}}
+% \renewcommand*{\vec}[1]{\hbox{$\overrightarrow{\displaystyle#1}$}}
+\newcommand{\abs}[1]{\hbox{$|#1|$}}
+\newcommand{\EE}[1]{\hbox{$\times 10^{#1}$}}
+\newcommand{\avg}[1]{\left\langle #1 \right\rangle}
+\newcommand{\dfdx}[2]{\hbox{$\dfrac{\partial #1}{\partial #2}$}}
+\newcommand{\dfdxy}[3]{\hbox{%
+  $\left(\dfrac{\partial #1}{\partial #2}\right)_{\!\!#3}$
+}}
+
+%%% abbreviations
+\def\ie{\hbox{i.e. }}   % id est
+\def\ea{\hbox{et al.}}  % et alli
+\def\eg{\hbox{e.g., }}  % exempli gratia
+\def\cf{\hbox{cf. }}    % confere
+\def\vs{\etr{vs }}
+
+%%% formating
+\newcommand{\etr}[1]{\textit{#1}}
+\renewcommand*{\emph}[1]{\textbf{#1}}
+% vsep and vsep require package couleurs
+\newcommand{\vsep}{%
+\vspace{-0.1cm}{\color{fds-dark-blue}\hrule}\vspace{0.25cm}
+}
+\newcommand{\vvsep}{%
+\vspace{0.25cm}{\color{fds-dark-blue}\hrule}\vspace{0.25cm}
+}
+
+
+%%% cheap biblio
+\newcommand{\bnum}[1]{\textbf{[#1]}}
+
+%%% correction
+\newcommand{\todo}[1]{\color{red}{\bfseries TODO: #1}}
+\newcommand{\tocheck}[1]{\color{orange}{\bfseries TO CHECK: #1}}
+\newcommand{\comment}[1]{%
+  \textit{\color{blue}[#1]}
+}

@@ -39,9 +39,9 @@ The analysis successfully classified M52 as a young open cluster located in the 
 
 | Parameter | Visual Fit Result | MCMC Result W/ Lyon | Literature Consensus |
 | :--- | :--- | :--- | :--- |
-| **Age** | ~100 Myr | $75.85 Myr$ | 60 - 100 Myr |
-| **Distance** | ~1.8 kpc | $1.28 kpc$ | 1.4 - 1.8 kpc |
-| **Reddening $E(B-V)$** | 0.7 mag | $0.70 mag$ | ~0.6 - 0.8 mag |
+| **Age** | ~100 Myr | 75.85 Myr | 60 - 100 Myr |
+| **Distance** | ~1.8 kpc | 1.28 kpc | 1.4 - 1.8 kpc |
+| **Reddening $E(B-V)$** | 0.7 mag | 0.70 mag | ~0.6 - 0.8 mag |
 
 ## Requirements
 To reproduce the analysis, the following Python libraries are required:

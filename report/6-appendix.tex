@@ -1,0 +1,70 @@
+\appendix
+\section{Appendix}
+% Appendices are optional, they can contain for instance additional plots and  tables, details of calculation, etc. The main plots of the report shall NOT be in appendix, but rather appear in the main text.
+
+\subsection{Imaging train characteristics}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{rapport_projet_OHP/fig/filtreSDSS.jpg}
+    \caption{Transmission curves of SDSS filters used by the IRiS telescope.}
+    \label{ann:SDSS}
+\end{figure}
+
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{rapport_projet_OHP/fig/QE.jpg}
+    \caption{Quantum efficiency of the camera sensor (in gray, Basic midband coating).}
+    \label{fig:QE}
+\end{figure}
+
+\subsection{MCMC attemps}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{rapport_projet_OHP/fig/Walker_evolv_first_tenta.png}
+        \caption{Walkers evolution for age (in log(myr)) and distance modulis}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{rapport_projet_OHP/fig/Wakler_evolv_first_tenta_bis.png}
+        \caption{Walkers evolution for $A_{g'} ,\, A_{r'},\, A_{i'}$}
+    \end{subfigure}
+
+    \vspace{0.5em}
+
+    % Bottom row
+    \begin{subfigure}{0.7\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{rapport_projet_OHP/fig/mcmc_hr_lyon_first_tenta.png}
+        \caption{CMD with MCMC isochrone}
+    \end{subfigure}
+
+    \caption{MCMC behaviour during the first attempt and corresponding isochrone fit using lyon's data set.}
+    \label{fig:mcmc_first_attempt}
+\end{figure}
+\nopagebreak
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.7\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{rapport_projet_OHP/fig/Walker_evol_final_attemps.png}
+        \caption{Walkers evolution for age (in log(myr)) and distance modulis}
+    \end{subfigure}
+    \vspace{0.5em}
+
+    % Bottom row
+    \begin{subfigure}{0.65\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{rapport_projet_OHP/fig/mcmc_hr_lyon_final_tenta.png}
+        \caption{CMD with MCMC isochrone}
+    \end{subfigure}
+
+    \caption{MCMC behaviour final attemps using lyon's data set.}
+    \label{fig:mcmc_final_attempt}
+\end{figure}

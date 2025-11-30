@@ -1,0 +1,83 @@
+\documentclass[a4paper,11pt]{sty/rapportEtudFdS}
+\usepackage{lipsum}
+% hyperref settings
+\usepackage{enumitem}
+\hypersetup{%
+	    colorlinks=False, breaklinks,
+	    linkbordercolor=YellowGreen,
+	    urlbordercolor=MidnightBlue,
+            unicode=true,
+            %%% A EDITER %%%
+            pdfauthor={Tom CANAGUIER, Romain LOUSTALET-PALENGAT, Shareen SAPHORES},%
+            pdftitle={HAP905P -- Study of the Open Cluster M52},
+            %%%%%%%%%%%%%%%%
+            pdfcreator={\LaTeXe},%
+            pdfkeywords={%
+	      Université de Lyon,%
+	      Université de Montpellier,%
+	      Master Astrophysique,%
+	      Master CCP,%
+	      HAP905P,%
+	      Atelier Astrophysique Observationnelle 2%
+	      }}
+% 
+\geometry{%
+          a4paper,
+          vmargin=2.5cm,
+          hmargin=2cm}
+%
+
+%%% A EDITER %%%
+% definition master/parcours
+\toggletrue{mdeuxas}
+\toggletrue{mdeuxccp}
+%
+\title{Study of the Open Cluster M52}
+\author{Tom \textsc{CANAGUIER} \quad Romain \textsc{LOUSTALET-PALENGAT} \quad Shareen \textsc{SAPHORES}}
+\date{\today}
+%%%%%%%%%%%%%%%%
+
+\begin{document}
+\selectlanguage{english}
+\maketitle
+\newpage
+\tableofcontents
+\clearpage
+
+\input{1-astro_context}
+\input{2-observations}
+\input{3-reduc_calib}
+\input{4-modeling}
+\input{5-discussion}
+
+%%% Bibliographie %%%
+\newpage
+\addcontentsline{toc}{section}{Bibliography}
+% \nocite{*}
+\bibliographystyle{sty/LivRevSolar}
+\bibliography{2025-projet_OHP_M2AstroCCP_Canaguier_Loustalet_Palengat_Saphores}
+
+\section*{Web references}
+%%% Limiter au maximum cetter section, préférer les références bibliographiques plus classiques
+\addcontentsline{toc}{section}{Web references}
+\begin{enumerate}
+  \item Project repository, \url{https://github.com/rloustalet/OHP-CLS}
+\end{enumerate}
+\clearpage
+
+%%% Annexes (optionnelles) %%%
+\appendix
+\input{6-appendix}
+
+
+%%% Résumés en/fr en 4e de couverture %%%
+\clearpage
+\hbox{}
+\vfill
+\thispagestyle{empty}
+\input{7-abstracts}
+\vfill
+\vskip3.cm
+\hrulefill
+
+\end{document}          

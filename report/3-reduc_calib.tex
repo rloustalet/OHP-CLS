@@ -1,0 +1,70 @@
+\section{Observation reduction and calibration}
+% description of calibration files
+% pre-processing procedure
+% extraction (photometric or spectroscopic)
+% calibration
+% description of final measurements
+
+Building calibration masters for preprocessing was the first step in data reduction.  All of the bias images were combined to create a bias master, which enables modeling of the CCD's residual electronic signal.  Each image is corrected for readout noise by subtracting the bias, which is the signal that remains in the sensor even in the absence of exposure.  The detector's intrinsic thermal noise was corrected by averaging the dark images, which were taken with the same exposure time as the scientific images but with the sensor closed.
+For every SDSS filter, flat fields were also obtained. These images, which were captured on a uniformly illuminated source, are used to correct optical effects like dust, vignetting, or illumination gradients as well as pixel-to-pixel sensitivity variations. To obtain a unit model that could be applied to the raw images, each flat was normalized by dividing it by its median value. This allowed for the retention of only the relative variations in response.
+ Each image was preprocessed using the standard method after these masters were created, which involved subtracting the bias master, subtracting the dark master corresponding to the exposure time, and then dividing the result by the normalized flat field of the corresponding filter Figure \ref{fig:flats}.  The calibrated images were then combined by filter to produce a median image of the cluster for g', r', and i'.\\
+
+A visual examination of the calibration masters identifies a number of irregularities that may have an impact on the preprocessing quality. An uneven readout pattern or an unstable CCD amplifier is indicated by the bias master, which displays a broad, brighter vertical band centered around x $\approx$ 1000 px Figure \ref{fig:bias-dark}. This kind of structure is consistently discovered when masters are produced from a large number of biases and can be caused by non-uniform gain between various detector regions or even a flaw in the readout electronics. In contrast, the dark master shows an extremely unusual signature Figure \ref{fig:bias-dark}: a bright circular area encircled by a radial gradient in the middle of the sensor. Such a pattern indicates either localized heating of the sensor due to an internal thermal defect or residual light contamination during dark acquisitions (light leakage, slightly open shutter, residual LED in the instrumentation) rather than the typical thermal noise of a CCD. Horizontal bands also show changes in dark current that are unique to particular detector lines.\\
+The structure of the standardized master flats obtained for the g', r', and i' filters is dominated by a strong, asymmetrical gradient and wave patterns suggesting optical interference or uneven illumination of the flat screen. Either significant vignetting in the optical path or non-homogeneous illumination are indicated by a darker area near the edges and a higher intensity in the center. The circular ripples in the flats are probably caused by internal reflections, a dust pattern, or fringe-type interference in the sensor layers, which is common in flats captured with wide filters. Moreover, the similarity of the gradient across the three filters may suggest a problem with the illumination of the flat source rather than a defect specific to the filters themselves.\\
+Preprocessed scientific images are directly impacted by visible flaws in calibration masters. Field uniformity is altered and residual artifacts are introduced into calibrated images by abnormal bias, dark structures, and uneven flat illumination. These anomalies can lower the overall reliability of data used for cluster analysis and have an impact on photometric measurements of stars.
+
+\begin{figure}[h!]
+\centering
+
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+        \includegraphics[width=\textwidth]{rapport_projet_OHP/fig/master bias.png}
+        \caption{Master bias}
+        \label{fig:bias}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{rapport_projet_OHP/fig/master dark.png}
+        \caption{Master dark}
+        \label{fig:dark}
+    \end{subfigure}
+
+    \caption{Master Bias (left) and Master Dark (right)}
+    \label{fig:bias-dark}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{rapport_projet_OHP/fig/master flats.png}
+    \caption{Master flats}
+    \label{fig:flats}
+\end{figure}
+
+The processing of the raw imaging data into a scientifically exploitable catalog involves a sequential pipeline comprising astrometric solving, source extraction, and photometric calibration against standard reference fields. 
+
+The initial step consists of establishing a robust World Coordinate System (WCS) for each stacked frame. This is achieved using the \texttt{solve-field} engine from the \textit{Astrometry.net} suite \cite{lang2010astrometry}. The algorithm operates blindly by extracting defining quads of stars from the input image and pattern-matching their geometric hashes against pre-indexed separate files derived from the 2MASS catalog. This process yields a precise mapping between the detector's pixel coordinates $(x, y)$ and the celestial equatorial coordinates $(\alpha, \delta)$, enabling subsequent cross-matching with external catalogs.
+
+Following the astrometric solution and a global background subtraction based on sigma-clipped statistics, source detection is performed using the \texttt{DAOStarFinder} algorithm \cite{stetson1987daophot}. 
+
+ This routine, derived from the classic DAOPHOT software, identifies point sources by searching for local maxima in the image array. Unlike simple thresholding methods, \texttt{DAOStarFinder} convolves the image with a 2D Gaussian kernel defined by the estimated Full Width at Half Maximum (FWHM) of the stellar Point Spread Function (PSF). A source is retained if its peak amplitude exceeds a specified detection threshold, typically set at $5\sigma_{bkg}$ above the local background noise. This convolution approach optimizes the signal-to-noise ratio for star-like objects while effectively filtering out cosmic rays and single-pixel noise artifacts. You can see in the Figure \ref{fig:detection} the stars detected in the field by considering a cut radius of 9'.
+
+ \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{rapport_projet_OHP/fig/detection.png}
+    \caption{Stars detection}
+    \label{fig:detection}
+\end{figure}
+
+Flux measurement is subsequently conducted using circular aperture photometry. For each detected source, the photon counts are integrated within a fixed radius $R_{ap}$, optimized to encompass the majority of the stellar flux while minimizing background noise contamination.  The instrumental magnitude $m_{inst}$ is derived logarithmically from the background-subtracted flux. To convert these instrumental values into the standard AB magnitude system, we employ the \textit{VizieR} database to query the Pan-STARRS DR1 catalog \cite{chambers2016panstarrs} \cite{magnier2013panstarrs}. A cross-match is performed between our source list and the reference catalog within a cone search radius corresponding to the field of view. The photometric zero-point ($ZP$) and the slope ($slope$) are then determined by a linear regression of the observed instrumental magnitudes against the reference magnitudes ($m_{ref}$), modeled as:
+\begin{equation}
+    m_{ref} = slope * m_{inst} + ZP
+\end{equation}
+This calibration step effectively corrects for the instrumental response, exposure time, and first-order atmospheric extinction, ensuring that the final photometric catalog is consistent with the standard photometric system. In the Figure \ref{fig:calib} you can see the different Zero-point we found with our method.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{rapport_projet_OHP/fig/calib_photo.png}
+    \caption{Photometric caibration}
+    \label{fig:calib}
+\end{figure}

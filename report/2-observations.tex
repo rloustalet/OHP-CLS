@@ -1,0 +1,67 @@
+\section{Observations}
+%
+\subsection{Target selection}
+% observability curve, etc
+
+The open cluster M52 was chosen because of its properties and ease of observation. Located in the constellation Cassiopeia, the cluster has a high declination, which allows for good visibility from the northern hemisphere in September, the period during which our observations were conducted.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{rapport_projet_OHP/fig/Airmass anglais.png}
+    \caption{ M52 Airmass during the night of September 24 to 25, 2025 (UT) at Haute-Provence Observatory (OHP).}
+    \label{fig:airmass}
+\end{figure}
+
+Figure \ref{fig:airmass} shows the evolution of the air mass of the open cluster M52 (blue line) during the night of September 24 to 25, 2025. We can see that M52 reaches its minimum air mass around 11 p.m., and this remains roughly equivalent for the other nights of observation. It is therefore around this time that our observations will be least affected by atmospheric absorption and turbulence.\\ Furthermore, M52 is a relatively young cluster, so its main sequence is still well populated, making it a relevant object for isochron adjustment and therefore for the study of stellar evolution. It is also sufficiently isolated to avoid contamination from neighboring stars, and its characteristics are well-suited to the capabilities of the telescope and camera used, which we will detail in the next section.
+
+\subsection{Description of observations}
+% telescopes, instruments, parameters (filter, resolution, ...)
+% observation summary table
+The observations were conducted using the Iris telescope at the Haute-Provence Observatory, whose characteristics are summarized in Table \ref{tab:iris_specs}.
+
+\begin{table}[h!]
+\centering
+\caption{Technical specification of the Iris telescope and detector.}
+\begin{tabular}{l l}
+\hline
+
+\textbf{Optical design} & Ritchey-Chrétien \\
+\textbf{Primary mirror diameter} & 500 mm \\
+\textbf{CCD camera} & FLI Proline 4240 \\
+\textbf{Detector size} & 2048 x 2048 pixels, 13.5 $\mu$m x 13.5 $\mu$m \\
+\textbf{Filters} & SDSS +H$\alpha$ + OIII + near-IR \\
+\textbf{Fiel od view} & 24'x24' \\
+\textbf{Resolution} & 0.7"/pixel \\
+\hline
+\end{tabular}
+
+\label{tab:iris_specs}
+\end{table}
+
+For this study, only the SDSS g', r', and i' filters were used to cover the entire visible range, while the u' and z' filters, located in the ultraviolet and near-infrared, respectively, were not used. This selection allows us to have a homogeneous distribution from blue to red and enables us to be in a spectral region where the detector's efficiency is highest and atmospheric effects remain limited. The Figure \ref{ann:SDSS} in the appendix A also shows that the three selected filters continuously cover the entire visible range, meaning that we do not lose any information between the bands on the colors of the stars. 
+
+%%%%%%%%%
+
+Another important factor is the detector's quantum efficiency (QE), or how well the CCD converts incident photons into detectable electrons. The FLI Proline 4240 camera's g', r', and i' filters have the highest QE in the visible range, ensuring a robust signal and advantageous signal-to-noise ration. However, in the ultraviolet (u') and near-infrared (z') ranges, the QE sharply decreases,making measurements less pecise and noisy. In order to maximize photonic efficciency and provide accurate photometry for color-magnitude diagrams, only g', r', and i' have been used.
+
+%%%%%%%%%
+
+With a visible diameter of about 16'x16', the M52 cluster contains most of the cluster's stars. The IRIS telescope is therefore perfect for taking a single image of the entire cluster, including the stars on the periphery, without the need for a mosaic because of its 24'x24' field of view. Moreover, an angular resolution of 0.7"/pixel ensures adequate distinction between individual stars.\\
+The observations were carried out in variable weather conditions, sometimes unfavorable, with occasional clouds, high humidity, or wind. The IRIS telescope is equipped with automatic safety systems that close the dome as soon as one of these parameters exceeds a predefined threshold in order to protect the instrument and the CCD camera. These mechanisms sometimes interrupted acquisitions, but it was nevertheless possible to collect sufficient data for the study of the open cluster. All of the observations made, with their parameters and filters used, are listed in the Table \ref{tab:images}.
+
+\begin{table}[h!]
+    \centering
+    \caption{Number of images for each step of the treatment for the SDSS filters.}
+    \begin{tabular}{lccc}
+    \hline
+         \textbf{Filters} & \textbf{Raw images} & \textbf{Images after alignment (used for stacking)}\\
+         \hline
+         g'& 379 & 21\\
+         r'& 353 & 21 \\
+         i'& 344 & 21 \\
+    \hline
+    \end{tabular}
+
+    \label{tab:images}
+\end{table}
+
