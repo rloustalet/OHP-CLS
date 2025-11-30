@@ -2,7 +2,7 @@
 
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 ![Language](https://img.shields.io/badge/Language-Python-blue)
-![Context](https://img.shields.io/badge/Context-M2)
+![Context](https://img.shields.io/badge/Context-M2-orange)
 
 ## Project Context
 This research project was conducted at the **Observatoire de Haute-Provence (OHP)** from **September 22 to September 26**.
@@ -37,14 +37,11 @@ The analysis was performed using a custom Python pipeline utilizing `astropy`, `
 ## Key Results
 The analysis successfully classified M52 as a young open cluster located in the Perseus Arm.
 
-| Parameter | Visual Fit Result | MCMC Result | Literature Consensus |
+| Parameter | Visual Fit Result | MCMC Result W/ Lyon | Literature Consensus |
 | :--- | :--- | :--- | :--- |
-| **Age** | ~100 Myr | $75.6 \pm 84$ Myr | 60 - 100 Myr |
-| **Distance** | ~1.8 kpc | $1.41 \pm 0.17$ kpc | 1.4 - 1.8 kpc |
-| **Reddening $E(B-V)$** | 0.75 mag | $0.853 \pm 0.013$ mag | ~0.6 - 0.8 mag |
-
-* **Consistency:** The CMDs generated from OHP and CRAL datasets showed remarkable morphological agreement, validating the calibration pipeline.
-* **Morphology:** The Main Sequence Turn-Off (MSTO) and the presence of "blue loop" stars were critical in constraining the age to $\le 100$ Myr.
+| **Age** | ~100 Myr | $75.85 Myr | 60 - 100 Myr |
+| **Distance** | ~1.8 kpc | $1.28 kpc | 1.4 - 1.8 kpc |
+| **Reddening $E(B-V)$** | 0.7 mag | $0.70 mag | ~0.6 - 0.8 mag |
 
 ## Requirements
 To reproduce the analysis, the following Python libraries are required:
