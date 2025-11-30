@@ -4,18 +4,18 @@
 ![Language](https://img.shields.io/badge/Language-Python-blue)
 ![Context](https://img.shields.io/badge/Context-M2)
 
-## 🔭 Project Context
+## Project Context
 This research project was conducted at the **Observatoire de Haute-Provence (OHP)** from **September 22 to September 26**.
 
 It was carried out as part of the practical observing module for the **Master 2 Astrophysics programs** of the Universities of **Lyon** and **Montpellier**, as well as the **CCP Montpellier** curriculum.
 
-## 🎯 Objectives
+## Objectives
 The primary goal of this project was to perform a complete photometric study of the open cluster **M52 (NGC 7654)** using multi-band optical imaging ($g$, $r$, $i$). The study aimed to develop a robust data reduction pipeline to derive the fundamental physical parameters of the cluster:
 * **Age** ($\tau$)
 * **Distance** ($d$)
 * **Interstellar Reddening** ($E(B-V)$)
 
-## ⚙️ Methodology & Pipeline
+## Methodology & Pipeline
 The analysis was performed using a custom Python pipeline utilizing `astropy`, `photutils`, and `astroquery`. The workflow consists of the following steps:
 
 ### 1. Data Reduction & Astrometry
@@ -34,7 +34,7 @@ The analysis was performed using a custom Python pipeline utilizing `astropy`, `
 * **Statistical Analysis:** Estimation of parameter uncertainties using Markov Chain Monte Carlo (**MCMC**) sampling.
 * **Validation:** Comparison of OHP data with an independent dataset acquired at **CRAL (Lyon)** to assess reproducibility.
 
-## 📊 Key Results
+## Key Results
 The analysis successfully classified M52 as a young open cluster located in the Perseus Arm.
 
 | Parameter | Visual Fit Result | MCMC Result | Literature Consensus |
@@ -46,7 +46,7 @@ The analysis successfully classified M52 as a young open cluster located in the 
 * **Consistency:** The CMDs generated from OHP and CRAL datasets showed remarkable morphological agreement, validating the calibration pipeline.
 * **Morphology:** The Main Sequence Turn-Off (MSTO) and the presence of "blue loop" stars were critical in constraining the age to $\le 100$ Myr.
 
-## 💻 Requirements
+## Requirements
 To reproduce the analysis, the following Python libraries are required:
 * `numpy`
 * `matplotlib`
@@ -57,6 +57,6 @@ To reproduce the analysis, the following Python libraries are required:
 
 *Note: The `solve-field` executable from the Astrometry.net suite must be installed locally.*
 
-## 👥 Authors & Acknowledgments
+## Authors
 AUTHORS
 All the data used here are available by contacting Romain Loustalet Palengat at : romain DOT loustalet DASH palengat AT etu DOT univ DASH lyon1 DOT fr
